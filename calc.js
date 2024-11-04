@@ -6,6 +6,15 @@ let isSecondNumber = false
 let hasPeriod = false
 
 const setElement = function (number) {
+    if (document.getElementById("screen").value == '0'){
+        firstNumber = ""
+        secondNumber = ""
+        operater = ""
+        isFirstNumber = true
+        isSecondNumber = false
+        hasPeriod = false
+        document.getElementById("screen").value = ""
+    }
     if (number == '.'){
         if (hasPeriod == true){
             return
