@@ -3,124 +3,86 @@ let secondNumber = ""
 let operater = ""
 let isFirstNumber = true
 let isSecondNumber = false
+let hasPeriod = false
+
+const setElement = function (number) {
+    if (number == '.'){
+        if (hasPeriod == true){
+            return
+        } else {
+            hasPeriod = true
+        }
+    }
+    document.getElementById("screen").value += number;
+    if (isFirstNumber == true) {
+        firstNumber += '' + number
+    } else {
+        secondNumber += '' + number
+    }
+};
 
 let num9 = document.querySelector(".num9")
-num9.addEventListener("click", () => {
-    document.getElementById("screen").value += 9;
-    if (isFirstNumber == true) {
-        firstNumber += "9"
-    } else {
-        secondNumber += "9"
-    }
-})
+num9.addEventListener("click", () => setElement(9))
 
 let num8 = document.querySelector(".num8")
-num8.addEventListener("click", () => {
-    document.getElementById("screen").value += 8;
-    if (isFirstNumber == true) {
-        firstNumber += "8"
-    } else {
-        secondNumber += "8"
-    }
-})
+num8.addEventListener("click", () => setElement(8))
 
 let num7 = document.querySelector(".num7")
-num7.addEventListener("click", () => {
-    document.getElementById("screen").value += 7;
-    if (isFirstNumber == true) {
-        firstNumber += "7"
-    } else {
-        secondNumber += "7"
-    }
-})
+num7.addEventListener("click", () => setElement(7))
 
 let num6 = document.querySelector(".num6")
-num6.addEventListener("click", () => {
-    document.getElementById("screen").value += 6;
-    if (isFirstNumber == true) {
-        firstNumber += "6"
-    } else {  
-        secondNumber += "6"
-    }
-})
+num6.addEventListener("click", () => setElement(6))
 
 let num5 = document.querySelector(".num5")
-num5.addEventListener("click", () => {
-    document.getElementById("screen").value += 5;
-    if (isFirstNumber == true) {
-        firstNumber += "5"
-    } else {  
-        secondNumber += "5"
-    }
-})
+num5.addEventListener("click", () => setElement(5))
 
 let num4 = document.querySelector(".num4")
-num4.addEventListener("click", () => {
-    document.getElementById("screen").value += 4;
-    if (isFirstNumber == true) {
-        firstNumber += "4"
-    } else {  
-        secondNumber += "4"
-    }
-})
+num4.addEventListener("click", () => setElement(4))
 
 let num3 = document.querySelector(".num3")
-num3.addEventListener("click", () => {
-    document.getElementById("screen").value += 3;
-    if (isFirstNumber == true) {
-        firstNumber += "3"
-    } else {  
-        secondNumber += "3"
-    }
-})
+num3.addEventListener("click", () => setElement(3))
 
 let num2 = document.querySelector(".num2")
-num2.addEventListener("click", () => {
-    document.getElementById("screen").value += 2;
-    if (isFirstNumber == true) {
-        firstNumber += "2"
-    } else {  
-        secondNumber += "2"
-    }
-})
+num2.addEventListener("click", () => setElement(2))
 
 let num1 = document.querySelector(".num1")
-num1.addEventListener("click", () => {
-    document.getElementById("screen").value += 1;
-    if (isFirstNumber == true) {
-        firstNumber += "1"
-    } else {  
-        secondNumber += "1"
-    }
-})
+num1.addEventListener("click", () => setElement(1))
 
 let num0 = document.querySelector(".num0")
-num0.addEventListener("click", () => {
-    document.getElementById("screen").value += 0;
-    if (isFirstNumber == true) {
-        firstNumber += "0"
-    } else {  
-        secondNumber += "0"
+num0.addEventListener("click", () => setElement(0))
+
+let period = document.querySelector(".period")
+period.addEventListener("click", () => setElement('.'))
+
+let backSpace = document.querySelector(".back")
+backSpace.addEventListener("click", () => backspace())
+
+function backspace() {
+    if (isFirstNumber == true){
+    document.getElementById("screen").value = document.getElementById("screen").value.toString().slice(0, -1)
+    firstNumber = firstNumber.toString().slice(0, -1)
+    } else if (secondNumber == "") {
+        document.getElementById("screen").value = document.getElementById("screen").value.toString().slice(0, -1) 
+        operater = ""
+    } else if (isSecondNumber == true) {
+        document.getElementById("screen").value = document.getElementById("screen").value.toString().slice(0, -1)
+        secondNumber = secondNumber.toString().slice(0, -1)
     }
-})
+  }
 
 const add = function (a, b) {
-    document.getElementById("screen").value = a + b;
     return a + b;
 };
 
 const subtract = function (a, b) {
-    document.getElementById("screen").value = a - b;
     return a - b;
 };
 
 const multiply = function (a, b) {
-    document.getElementById("screen").value = a * b;
     return a * b
 };
 
 const divide = function (a, b) {
-    document.getElementById("screen").value = a / b;
     return a / b
 };
 
@@ -132,6 +94,7 @@ plus.addEventListener("click", () => {
     document.getElementById("screen").value += "+";
     isFirstNumber = false
     isSecondNumber = true
+    hasPeriod = false
     operater = add
 })
 
@@ -143,6 +106,7 @@ minus.addEventListener("click", () => {
     document.getElementById("screen").value += "-";
     isFirstNumber = false
     isSecondNumber = true
+    hasPeriod = false
     operater = subtract
 })
 
@@ -154,6 +118,7 @@ times.addEventListener("click", () => {
     document.getElementById("screen").value += "*";
     isFirstNumber = false
     isSecondNumber = true
+    hasPeriod = false
     operater = multiply
 })
 
@@ -165,17 +130,18 @@ divd.addEventListener("click", () => {
     document.getElementById("screen").value += "/";
     isFirstNumber = false
     isSecondNumber = true
+    hasPeriod = false
     operater = divide
 })
 
-let result = document.querySelector(".result")
-result.addEventListener("click", () => {
-    operater(parseInt(firstNumber), parseInt(secondNumber))
-    firstNumber = operater(parseInt(firstNumber), parseInt(secondNumber))
+let equalsButton = document.querySelector(".result")
+equalsButton.addEventListener("click", () => {
+    const result = operater(parseInt(firstNumber * 100) / 100, parseInt(secondNumber * 100) / 100)
+    document.getElementById("screen").value = result
+    firstNumber = result
     secondNumber = ""
     operater = ""
 })
-
 
 let clear = document.querySelector(".clear")
 clear.addEventListener("click", () => {
@@ -185,5 +151,5 @@ clear.addEventListener("click", () => {
     operater = ""
     isFirstNumber = true
     isSecondNumber = false
+    hasPeriod = false
 })
-
