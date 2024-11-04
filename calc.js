@@ -15,6 +15,7 @@ const setElement = function (number) {
         hasPeriod = false
         document.getElementById("screen").value = ""
     }
+    
     if (number == '.'){
         if (hasPeriod == true){
             return
