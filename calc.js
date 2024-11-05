@@ -6,7 +6,7 @@ let isSecondNumber = false
 let hasPeriod = false
 
 const setElement = function (number) {
-    if (document.getElementById("screen").value == ''){
+    if (document.getElementById("screen").value == '') {
         firstNumber = "0"
         secondNumber = ""
         operater = ""
@@ -16,20 +16,23 @@ const setElement = function (number) {
         document.getElementById("screen").value = ""
     }
 
-    if (number == '.'){
-        if (hasPeriod == true){
-            return
-        } else {
-            hasPeriod = true
-        }
-    }
     document.getElementById("screen").value += number;
     if (isFirstNumber == true) {
+        if (number == ".") {
+            if (firstNumber.includes(".")) {
+                return
+            }
+        }
         firstNumber += '' + number
     } else {
+        if (number == ".") {
+            if (secondNumber.includes(".")) {
+                return
+            }
+        }
         secondNumber += '' + number
-    }
-};
+    };
+}
 
 let num9 = document.querySelector(".num9")
 num9.addEventListener("click", () => setElement(9))
@@ -68,11 +71,11 @@ let backSpace = document.querySelector(".back")
 backSpace.addEventListener("click", () => backspace())
 
 function backspace() {
-    if (isFirstNumber == true){
-    firstNumber = firstNumber.toString().slice(0, -1)
-    document.getElementById("screen").value = document.getElementById("screen").value.toString().slice(0, -1)
+    if (isFirstNumber == true) {
+        firstNumber = firstNumber.toString().slice(0, -1)
+        document.getElementById("screen").value = document.getElementById("screen").value.toString().slice(0, -1)
     } else if (secondNumber == "") {
-        document.getElementById("screen").value = document.getElementById("screen").value.toString().slice(0, -1) 
+        document.getElementById("screen").value = document.getElementById("screen").value.toString().slice(0, -1)
         operater = ""
     } else if (isSecondNumber == true) {
         secondNumber = secondNumber.toString().slice(0, -1)
