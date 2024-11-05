@@ -114,19 +114,20 @@ minus.addEventListener("click", () => {
     if (!operater == "") {
         return
     }
-    document.getElementById("screen").value += "-";
+    document.getElementById("screen").value += "−";
     isFirstNumber = false
     isSecondNumber = true
     hasPeriod = false
     operater = subtract
 })
 
+let multSym = document.getElementById("#multSym")
 let times = document.querySelector(".times")
 times.addEventListener("click", () => {
     if (!operater == "") {
         return
     }
-    document.getElementById("screen").value += "*";
+    document.getElementById("screen").value += "×";
     isFirstNumber = false
     isSecondNumber = true
     hasPeriod = false
@@ -138,7 +139,7 @@ divd.addEventListener("click", () => {
     if (!operater == "") {
         return
     }
-    document.getElementById("screen").value += "/";
+    document.getElementById("screen").value += "÷";
     isFirstNumber = false
     isSecondNumber = true
     hasPeriod = false
