@@ -11,7 +11,7 @@ body {
     background-color: black;
     border: 10px solid blue;
     border-radius: 10px;
-    height: 70%;
+    height: 550px;
     width: 400px;
     display: flex;
     flex-wrap: wrap;
