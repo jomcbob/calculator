@@ -16,20 +16,18 @@ const setElement = function (number) {
         document.getElementById("screen").value = ""
     }
 
+    if (number == '.'){
+        if (hasPeriod == true){
+            return
+        } else {
+            hasPeriod = true
+        }
+    }
+    
     document.getElementById("screen").value += number;
     if (isFirstNumber == true) {
-        if (number == ".") {
-            if (firstNumber.includes(".")) {
-                return
-            }
-        }
         firstNumber += '' + number
     } else {
-        if (number == ".") {
-            if (secondNumber.includes(".")) {
-                return
-            }
-        }
         secondNumber += '' + number
     };
 }
