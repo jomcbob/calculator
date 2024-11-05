@@ -6,8 +6,8 @@ let isSecondNumber = false
 let hasPeriod = false
 
 const setElement = function (number) {
-    if (document.getElementById("screen").value == '0'){
-        firstNumber = ""
+    if (document.getElementById("screen").value == ''){
+        firstNumber = "0"
         secondNumber = ""
         operater = ""
         isFirstNumber = true
@@ -15,7 +15,7 @@ const setElement = function (number) {
         hasPeriod = false
         document.getElementById("screen").value = ""
     }
-    
+
     if (number == '.'){
         if (hasPeriod == true){
             return
@@ -69,16 +69,16 @@ backSpace.addEventListener("click", () => backspace())
 
 function backspace() {
     if (isFirstNumber == true){
-    document.getElementById("screen").value = document.getElementById("screen").value.toString().slice(0, -1)
     firstNumber = firstNumber.toString().slice(0, -1)
+    document.getElementById("screen").value = document.getElementById("screen").value.toString().slice(0, -1)
     } else if (secondNumber == "") {
         document.getElementById("screen").value = document.getElementById("screen").value.toString().slice(0, -1) 
         operater = ""
     } else if (isSecondNumber == true) {
-        document.getElementById("screen").value = document.getElementById("screen").value.toString().slice(0, -1)
         secondNumber = secondNumber.toString().slice(0, -1)
+        document.getElementById("screen").value = document.getElementById("screen").value.toString().slice(0, -1)
     }
-  }
+}
 
 const add = function (a, b) {
     return a + b;
@@ -146,9 +146,10 @@ divd.addEventListener("click", () => {
 
 let equalsButton = document.querySelector(".result")
 equalsButton.addEventListener("click", () => {
-    const result = operater(parseInt(firstNumber * 100) / 100, parseInt(secondNumber * 100) / 100)
+    const result = operater((parseInt(firstNumber * 100)) / 100, (parseInt(secondNumber * 100)) / 100)
     document.getElementById("screen").value = result
     firstNumber = result
+    isFirstNumber = true
     secondNumber = ""
     operater = ""
 })
