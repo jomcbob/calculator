@@ -5,6 +5,7 @@ body {
     align-items: center;
     flex: 1 1 0px;
     margin: 0;
+    background-color: rgb(98, 94, 94);
 }
 
 .box {
@@ -56,4 +57,27 @@ button{
 
 .back{
     background-color: blueviolet;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(12, 12, 78);
+    height: 50px;
+    color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+a {
+    color: rgb(106, 106, 242);
+    margin: 10px;
+}
+
+a:hover {
+    color: aqua;
 }

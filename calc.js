@@ -97,8 +97,8 @@ const divide = function (a, b) {
     return a / b
 };
 
-let plus = document.querySelector(".plus")
-plus.addEventListener("click", () => {
+// functions for each of the buttons
+const updateOperPlus = function (){
     if (!operater == "") {
         return
     }
@@ -107,10 +107,9 @@ plus.addEventListener("click", () => {
     isSecondNumber = true
     hasPeriod = false
     operater = add
-})
+}
 
-let minus = document.querySelector(".min")
-minus.addEventListener("click", () => {
+const updateOperMinus = function (){
     if (!operater == "") {
         return
     }
@@ -119,11 +118,9 @@ minus.addEventListener("click", () => {
     isSecondNumber = true
     hasPeriod = false
     operater = subtract
-})
+}
 
-let multSym = document.getElementById("#multSym")
-let times = document.querySelector(".times")
-times.addEventListener("click", () => {
+const updateOperTimes = function (){
     if (!operater == "") {
         return
     }
@@ -132,10 +129,9 @@ times.addEventListener("click", () => {
     isSecondNumber = true
     hasPeriod = false
     operater = multiply
-})
+}
 
-let divd = document.querySelector(".divd")
-divd.addEventListener("click", () => {
+const updateOperDivd = function (){
     if (!operater == "") {
         return
     }
@@ -144,20 +140,18 @@ divd.addEventListener("click", () => {
     isSecondNumber = true
     hasPeriod = false
     operater = divide
-})
+}
 
-let equalsButton = document.querySelector(".result")
-equalsButton.addEventListener("click", () => {
-    const result = operater((parseInt(firstNumber * 100)) / 100, (parseInt(secondNumber * 100)) / 100)
+const resultEquals = function (){
+    const result = operater((parseInt(firstNumber * 1000)) / 1000, (parseInt(secondNumber * 1000)) / 1000)
     document.getElementById("screen").value = result
     firstNumber = result
     isFirstNumber = true
     secondNumber = ""
     operater = ""
-})
+}
 
-let clear = document.querySelector(".clear")
-clear.addEventListener("click", () => {
+const AC = function () {
     document.getElementById("screen").value = "";
     firstNumber = ""
     secondNumber = ""
@@ -165,4 +159,84 @@ clear.addEventListener("click", () => {
     isFirstNumber = true
     isSecondNumber = false
     hasPeriod = false
+    return
+}
+
+// added clicks to buttons that run a function when they are pressed
+let plus = document.querySelector(".plus")
+plus.addEventListener("click", () => {
+    updateOperPlus()
 })
+
+let minus = document.querySelector(".min")
+minus.addEventListener("click", () => {
+    updateOperMinus()
+})
+
+let times = document.querySelector(".times")
+times.addEventListener("click", () => {
+    updateOperTimes()
+})
+
+let divd = document.querySelector(".divd")
+divd.addEventListener("click", () => {
+    updateOperDivd()
+})
+
+let clear = document.querySelector(".clear")
+clear.addEventListener("click", () => {
+    AC()
+})
+
+let equalsButton = document.querySelector(".result")
+equalsButton.addEventListener("click", () => {
+    resultEquals()
+})
+
+
+const VALUES = [
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ".",
+    "+", "-", "*", "/", 
+    "Enter", "Escape", "Backspace",
+  ];
+  
+  // Keyboard support
+  document.addEventListener("keydown", (event) => {
+    if (VALUES.includes(event.key)) {
+      switch (event.key) {
+  
+        case "+":
+            updateOperPlus()
+          break;
+  
+        case "-":
+            updateOperMinus()
+          break;
+  
+        case "*":
+            updateOperTimes()
+          break;
+  
+        case "/":
+            updateOperDivd()
+          break;
+  
+        case "Enter":
+            resultEquals()
+          break;
+  
+        case "Escape":
+            AC()
+          break;
+  
+        case "Backspace":
+            backspace();
+          break;
+  
+        default:
+          setElement(event.key);
+          break;
+      }
+    }
+  });
+
