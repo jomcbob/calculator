@@ -32,42 +32,6 @@ const setElement = function (number) {
     };
 }
 
-let num9 = document.querySelector(".num9")
-num9.addEventListener("click", () => setElement(9))
-
-let num8 = document.querySelector(".num8")
-num8.addEventListener("click", () => setElement(8))
-
-let num7 = document.querySelector(".num7")
-num7.addEventListener("click", () => setElement(7))
-
-let num6 = document.querySelector(".num6")
-num6.addEventListener("click", () => setElement(6))
-
-let num5 = document.querySelector(".num5")
-num5.addEventListener("click", () => setElement(5))
-
-let num4 = document.querySelector(".num4")
-num4.addEventListener("click", () => setElement(4))
-
-let num3 = document.querySelector(".num3")
-num3.addEventListener("click", () => setElement(3))
-
-let num2 = document.querySelector(".num2")
-num2.addEventListener("click", () => setElement(2))
-
-let num1 = document.querySelector(".num1")
-num1.addEventListener("click", () => setElement(1))
-
-let num0 = document.querySelector(".num0")
-num0.addEventListener("click", () => setElement(0))
-
-let period = document.querySelector(".period")
-period.addEventListener("click", () => setElement('.'))
-
-let backSpace = document.querySelector(".back")
-backSpace.addEventListener("click", () => backspace())
-
 function backspace() {
     if (isFirstNumber == true) {
         firstNumber = firstNumber.toString().slice(0, -1)
@@ -143,7 +107,8 @@ const updateOperDivd = function (){
 }
 
 const resultEquals = function (){
-    const result = operater((parseInt(firstNumber * 1000)) / 1000, (parseInt(secondNumber * 1000)) / 1000)
+    let result = operater(Number(firstNumber), (Number(secondNumber)))
+    result = Math.round(result * 1000000) / 1000000
     document.getElementById("screen").value = result
     firstNumber = result
     isFirstNumber = true
@@ -161,6 +126,42 @@ const AC = function () {
     hasPeriod = false
     return
 }
+
+let num9 = document.querySelector(".num9")
+num9.addEventListener("click", () => setElement(9))
+
+let num8 = document.querySelector(".num8")
+num8.addEventListener("click", () => setElement(8))
+
+let num7 = document.querySelector(".num7")
+num7.addEventListener("click", () => setElement(7))
+
+let num6 = document.querySelector(".num6")
+num6.addEventListener("click", () => setElement(6))
+
+let num5 = document.querySelector(".num5")
+num5.addEventListener("click", () => setElement(5))
+
+let num4 = document.querySelector(".num4")
+num4.addEventListener("click", () => setElement(4))
+
+let num3 = document.querySelector(".num3")
+num3.addEventListener("click", () => setElement(3))
+
+let num2 = document.querySelector(".num2")
+num2.addEventListener("click", () => setElement(2))
+
+let num1 = document.querySelector(".num1")
+num1.addEventListener("click", () => setElement(1))
+
+let num0 = document.querySelector(".num0")
+num0.addEventListener("click", () => setElement(0))
+
+let period = document.querySelector(".period")
+period.addEventListener("click", () => setElement('.'))
+
+let backSpace = document.querySelector(".back")
+backSpace.addEventListener("click", () => backspace())
 
 // added clicks to buttons that run a function when they are pressed
 let plus = document.querySelector(".plus")
