@@ -82,7 +82,7 @@ a:hover {
     color: aqua;
 }
 
-@media (width <= 500px) {
+@media (width < 1000px) {
     .box{
         width: 100vh;
         height: 75vh;
