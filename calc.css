@@ -89,12 +89,12 @@ a:hover {
     }
 
     button {
-        height: 4%;
+        height: 10%;
     }
 
     footer {
         height: 300px;
-        font-size: xx-large;
+        font-size:calc(xx-large + xx-large);
     }
 
     input {
