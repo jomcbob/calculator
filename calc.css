@@ -85,11 +85,11 @@ a:hover {
 @media (width < 1000px) {
     .box{
         width: 100vh;
-        height: 50vh;
+        height: 80vh;
     }
 
     button {
-        height: 14.3%;
+        height: 14%;
     }
 
     footer {
@@ -98,7 +98,7 @@ a:hover {
     }
 
     input {
-        height: 14.3%;
+        height: 14%;
         font-size: 50px;
     }
     
