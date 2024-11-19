@@ -88,6 +88,10 @@ a:hover {
         height: 50vh;
     }
 
+    button {
+        height: 10%;
+    }
+
     footer {
         height: 100px;
         font-size: xx-large;
