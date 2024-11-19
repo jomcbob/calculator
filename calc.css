@@ -95,17 +95,21 @@ a:hover {
     footer {
         height: 200px;
         font-size: 50px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
     }
 
     input {
-        height: 13%;
+        height: 10%;
         font-size: 50px;
         text-wrap: wrap;
         line-break: anywhere;
         width: 97%;
     }
 
-    *:hover{
+    button:hover{
         opacity: 1;
     }
     
