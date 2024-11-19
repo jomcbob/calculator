@@ -89,7 +89,7 @@ a:hover {
     }
 
     button {
-        height: 7%;
+        height: 4%;
     }
 
     footer {
@@ -99,7 +99,7 @@ a:hover {
 
     input {
         height: 160px;
-        font-size: xx-large;
+        font-size: 100%;
     }
     
 }
