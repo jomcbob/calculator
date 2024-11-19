@@ -85,12 +85,17 @@ a:hover {
 @media (width < 1000px) {
     .box{
         width: 100vh;
-        height: 75vh;
+        height: 65vh;
     }
 
     footer {
-        height: 75px;
+        height: 100px;
         font-size: x-large;
+    }
+
+    input {
+        height: 60px;
+        font-size: xx-large;
     }
     
 }
