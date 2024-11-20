@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 body {
     height: 100vh;
     display: flex;
@@ -16,22 +20,23 @@ body {
     width: 400px;
     display: flex;
     flex-wrap: wrap;
-    
+    background-color: grey;
 }
 
 
 
 input {
     padding: 5px;
-    width: 96%;
+    width: 100%;
     border: 2px solid black;
     height: 40px;
-    border: 10px solid gray;
+    border: 5px solid rgb(20, 4, 4);
     border-radius: 2px;
     margin: 0;
     font-size: x-large;
     text-align: right;
 }
+
 #num:hover {
     opacity: 70%;
 }
@@ -41,10 +46,12 @@ button:hover {
 }
 
 button{
-    width: 33.3%;
-    height: 14.6%;
+    width: 30%;
+    height: 15%;
     font-size: x-large;
     background-color: gainsboro;
+    border-radius: 50%;
+    margin: auto;
 }
 
 #num{
@@ -89,33 +96,34 @@ a:hover {
         overflow-y: hidden;
         justify-content: start;
         align-items: start;
+        height: 100vh;
+        width: 100vw;
     }
 
     .box{
-        width: 100vh;
-        height: 80vh;
+        width: 100%;
+        height: 85%;
         margin-top: 10px;
+        border: 2% solid blue;
+    }
+
+    footer {
+        height: 13%;
+        font-size: 55px;
     }
 
     button {
         height: 14.6%;
         font-size: 50px;
-    }
-
-    footer {
-        height: 14%;
-        font-size: 50px;
-        position: static;
-        margin-top: 20px;
-        width: 100vw;
+        width: 33.3%;
     }
 
     input {
         height: 10%;
+        width: 100%;
         font-size: 50px;
         text-wrap: wrap;
         line-break: anywhere;
-        width: 97%;
     }
 
     button:hover{

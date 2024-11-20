@@ -108,7 +108,7 @@ const updateOperDivd = function (){
 
 const resultEquals = function (){
     let result = operater(Number(firstNumber), (Number(secondNumber)))
-    result = Math.round(result * 1000000) / 1000000
+    result = Math.floor(result * 1000000) / 1000000
     document.getElementById("screen").value = result
     firstNumber = result
     isFirstNumber = true
