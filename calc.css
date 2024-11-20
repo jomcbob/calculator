@@ -88,6 +88,7 @@ a:hover {
         overflow-x: hidden;
         overflow-y: hidden;
         justify-content: start;
+        align-items: start;
     }
 
     .box{
