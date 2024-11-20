@@ -97,7 +97,7 @@ a:hover {
     }
 
     button {
-        height: 14.5%;
+        height: 14.6%;
     }
 
     footer {
@@ -105,6 +105,7 @@ a:hover {
         font-size: 50px;
         position: static;
         margin-top: 20px;
+        width: 100vw;
     }
 
     input {
