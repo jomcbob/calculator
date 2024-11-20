@@ -103,10 +103,8 @@ a:hover {
     footer {
         height: 200px;
         font-size: 50px;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        position: static;
+        margin-top: 20px;
     }
 
     input {
