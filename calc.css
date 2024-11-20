@@ -94,6 +94,7 @@ a:hover {
     .box{
         width: 100vh;
         height: 80vh;
+        margin-top: 10px;
     }
 
     button {
@@ -105,7 +106,7 @@ a:hover {
         font-size: 50px;
         position: static;
         margin-top: 20px;
-        width: 100vw;
+        width: 100vh;
     }
 
     input {
