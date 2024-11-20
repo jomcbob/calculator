@@ -83,13 +83,19 @@ a:hover {
 }
 
 @media (width < 1000px) {
+
+    body {
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
     .box{
         width: 100vh;
         height: 80vh;
     }
 
     button {
-        height: 14%;
+        height: 14.5%;
     }
 
     footer {
@@ -110,6 +116,10 @@ a:hover {
     }
 
     button:hover{
+        opacity: 1;
+    }
+
+    #num:hover {
         opacity: 1;
     }
     
