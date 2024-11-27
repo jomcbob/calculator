@@ -14,13 +14,14 @@ body {
 
 .box {
     background-color: black;
-    border: 10px solid blue;
+    border: 10px solid black;
     border-radius: 10px;
-    height: 550px;
+    height: 590px;
     width: 400px;
     display: flex;
     flex-wrap: wrap;
     background-color: grey;
+    padding: 7px;
 }
 
 
@@ -29,7 +30,7 @@ input {
     padding: 5px;
     width: 100%;
     border: 2px solid black;
-    height: 40px;
+    height: 60px;
     border: 5px solid rgb(20, 4, 4);
     border-radius: 2px;
     margin: 0;
@@ -45,25 +46,36 @@ button:hover {
     opacity: 70%;
 }
 
+button:active {
+    box-shadow: none;
+}
+
 button{
     width: 30%;
-    height: 15%;
+    height: 70px;
     font-size: x-large;
     background-color: gainsboro;
     border-radius: 50%;
-    margin: auto;
+    margin: 5px;
+    border: 1px solid gray;
+    box-shadow: 9px 9px 7px rgb(53, 52, 52);
+    color: antiquewhite;
+    background-color: rgb(163, 151, 151);
 }
 
 #num{
-    background-color: goldenrod;
+    background-color: rgb(62, 59, 59);
+    color: antiquewhite;
 }
 
 #AC{
-    background-color: bisque;
+    background-color: rgb(31, 29, 29);
+    color: antiquewhite;
 }
 
 .back{
-    background-color: blueviolet;
+    background-color: darkslategrey;
+    color: antiquewhite;
 }
 
 footer{
