@@ -131,7 +131,7 @@ a:hover {
 
     button {
         height: 13.2%;
-        font-size: 50px;
+        font-size: 5svh;
         width: 30%;
         display: flex;
         justify-content: center;
@@ -143,7 +143,7 @@ a:hover {
         width: 100%;
         text-wrap: wrap;
         line-break: anywhere;
-        font-size: 6vh;
+        font-size: 6svh;
     }
 
     button:hover{
