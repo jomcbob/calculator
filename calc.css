@@ -106,17 +106,18 @@ a:hover {
     body {
         overflow-x: hidden;
         overflow-y: hidden;
-        align-items: start;
+        flex-direction: column;
         height: 100vh;
         width: 100vw;
-        justify-content: center;
+        justify-content: space-between;
+        align-items: space-between;
     }
 
     .box{
         width: 100%;
         height: 80%;
         margin-top: 10px;
-        border: 2% solid blue;
+        border: 2% solid black;
     }
 
     footer {
