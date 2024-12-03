@@ -109,7 +109,7 @@ a:hover {
         flex-direction: column;
         height: 100vh;
         width: 100vw;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: space-between;
     }
 
@@ -118,6 +118,8 @@ a:hover {
         height: 80%;
         margin-top: 10px;
         border: 2% solid black;
+        justify-content: center;
+        align-items: center;
     }
 
     footer {
@@ -125,7 +127,7 @@ a:hover {
         height: 13%;
         font-size: 55px;
         position: static;
-        margin-top: 5%
+        margin-top: 2%
     }
 
     button {
@@ -140,9 +142,9 @@ a:hover {
     input {
         height: 11%;
         width: 100%;
-        font-size: 50px;
         text-wrap: wrap;
         line-break: anywhere;
+        font-size: 6vh;
     }
 
     button:hover{
